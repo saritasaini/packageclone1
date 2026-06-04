@@ -1,0 +1,63 @@
+/** Elementor / Bocpak theme values — 1440px desktop reference */
+export const tokens = {
+  colors: {
+    primary: "#2757FF",
+    secondary: "#F865DC",
+    accentGreen: "#5fbd74",
+    text: "#555555",
+    dark: "#000000",
+    border: "#E7E7E7",
+    bgField: "#E9EEFF",
+    sectionMuted: "#fafafa",
+    servicesBg: "#f0f7f2",
+    heroPink: "#fde2e4",
+    heroMint: "#d9ead3",
+    heroCream: "#f5efe6",
+  },
+  layout: {
+    containerMax: 1350,
+    containerPaddingMobile: 30,
+    containerPaddingDesktop: 72,
+    sectionPaddingMobile: 60,
+    sectionPaddingDesktop: 80,
+    categorySplitLeft: "66.15%",
+    categorySplitRight: "33.85%",
+  },
+  header: {
+    heightMobile: 72,
+    heightDesktop: 80,
+    navFontSize: 13,
+    navGap: 28,
+  },
+  hero: {
+    minHeightMobile: 630,
+    minHeightDesktop: 800,
+    h1SizeMobile: 36,
+    h1SizeDesktop: 64,
+  },
+  category: {
+    slideGap: 30,
+    slidesPerViewDesktop: 2,
+    imageBorderRadius: 16,
+    imageHoverShadow: "0 4px 30px rgba(0,0,0,0.15)",
+    titleSize: 18,
+    bannerMinHeight: 280,
+    bannerPadding: "32px 30px",
+    bannerTitleSize: 34,
+    bannerTitleLineHeight: 40,
+  },
+  product: {
+    imageBg: "#f7f7f7",
+    captionPadding: 20,
+  },
+  trustBar: {
+    paddingY: 32,
+    paddingXDesktop: 72,
+  },
+  typography: {
+    sectionTitleMobile: 32,
+    sectionTitleDesktop: 48,
+    bodySize: 16,
+    bodyLineHeight: 26,
+  },
+} as const;
