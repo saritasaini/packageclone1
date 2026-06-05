@@ -20,9 +20,9 @@ export const navLinks = [
 export const heroSlides = [
   {
     id: "custom-boxes",
-    bg: "bg-hero-pink",
-    highlightWord: "custom",
-    title: "Create custom boxes & packaging",
+    bg: "bg-[#F3C8DB]",
+    highlightWord: "Create",
+    title: "Create custom boxes\u00A0&\u00A0packaging",
     description:
       "Order personalized, high quality custom printed packaging and branded boxes your customers will love all in one place.",
     image: img("h2-slider2.jpg"),
@@ -33,7 +33,7 @@ export const heroSlides = [
     id: "cosmetic-tubes",
     bg: "bg-hero-mint",
     highlightWord: "Cosmetic",
-    title: "Cosmetic tube packaging suppliers",
+    title: "Cosmetic tube packaging\u00A0suppliers",
     description:
       "Best cosmetic tube packaging suppliers from New York, professional production line, get quotes.",
     image: img("h2-slider4.png"),
@@ -43,7 +43,7 @@ export const heroSlides = [
     id: "pet-food",
     bg: "bg-hero-cream",
     highlightWord: "packaging",
-    title: "Pet food packaging pouch manufacturer",
+    title: "Pet\u00A0food\u00A0packaging pouch\u00A0manufacturer",
     description:
       "Over 20 years of experience in plastic packaging pouch manufacturing",
     image: img("h2-slider6.png"),

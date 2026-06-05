@@ -19,17 +19,23 @@ export function Button({
     <Link
       href={href}
       className={cn(
-        "rev-btn inline-flex items-center gap-1 overflow-hidden rounded-md px-7 py-3.5 text-[13px] font-bold uppercase tracking-wide transition-transform hover:scale-[1.02] active:scale-[0.98]",
+        "rev-btn group inline-flex items-center gap-1 overflow-hidden rounded-md px-7 py-3.5 text-[13px] font-bold uppercase tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]",
         variant === "primary" &&
-          "bg-accent-green text-white hover:bg-[#4aad62]",
+          "bg-accent-green text-white hover:bg-secondary",
         variant === "secondary" &&
-          "border border-border bg-white text-dark hover:border-dark/30",
+          "border border-border bg-white text-dark hover:bg-secondary hover:text-white hover:border-secondary",
         className,
       )}
     >
-      <span className="bocpak_btn_text inline-flex items-center gap-1">
-        {children}
-        <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+      <span className="relative overflow-hidden inline-flex w-full items-center justify-center">
+        <span className="bocpak_btn_text inline-flex w-full items-center justify-center gap-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-[120%]">
+          {children}
+          <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+        </span>
+        <span className="bocpak_btn_text absolute inset-0 inline-flex w-full items-center justify-center gap-1 translate-y-[120%] transition-transform duration-300 ease-in-out group-hover:translate-y-0 text-white">
+          {children}
+          <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+        </span>
       </span>
     </Link>
   );

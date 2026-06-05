@@ -16,10 +16,10 @@ export function UnderlineHighlight({
     <span className={cn("font-heading", className)}>
       {parts.map((part, i) =>
         part.toLowerCase() === highlight.toLowerCase() ? (
-          <span key={i} className="relative inline-block pb-1">
+          <span key={i} className="relative inline pb-1">
             {part}
             <svg
-              className="absolute -bottom-0.5 left-0 w-full h-[10px] text-secondary"
+              className="absolute bottom-4 left-0 w-full h-[10px] text-secondary animate-swing"
               viewBox="0 0 120 10"
               preserveAspectRatio="none"
               aria-hidden

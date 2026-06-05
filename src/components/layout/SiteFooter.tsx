@@ -14,7 +14,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-white pt-16 pb-8">
       <div className="container-bocpak">
-        
+
         {/* Bocpak Info Section (Above the main footer columns) */}
         <div className="mb-12 border-b border-border pb-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 items-start">
@@ -46,7 +46,7 @@ export function SiteFooter() {
                 </div>
               </div>
             </div>
-            
+
             {/* Column 2: 24/7 Support */}
             <div className="flex items-start gap-4">
               <div className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full bg-[#22C55E] text-white">

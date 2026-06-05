@@ -19,7 +19,7 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white">
+    <header className="border-b border-border bg-white">
       <div className="container-bocpak flex h-[72px] items-center justify-between gap-4 lg:h-[80px]">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <Image

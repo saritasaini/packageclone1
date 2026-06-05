@@ -151,6 +151,15 @@
       transform: translateX(-50%);
     }
   }
+
+  @keyframes swing {
+    0%, 100% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+  }
+
+  .animate-swing {
+    animation: swing 2s ease-in-out infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
