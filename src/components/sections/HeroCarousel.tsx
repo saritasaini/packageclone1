@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils/cn";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import useEmblaCarousel from "embla-carousel-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const titleVariants = {
+const titleVariants: Variants = {
   hidden: { opacity: 0, x: -200 },
   visible: { 
     opacity: 1, 
@@ -21,7 +21,7 @@ const titleVariants = {
   },
 };
 
-const itemsContainerVariants = {
+const itemsContainerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -31,7 +31,7 @@ const itemsContainerVariants = {
   },
 };
 
-const itemUpVariants = {
+const itemUpVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
