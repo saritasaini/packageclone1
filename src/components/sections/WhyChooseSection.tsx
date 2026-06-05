@@ -1,35 +1,42 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { whyChooseFeatures, whyChooseImages } from "@/lib/content/home-2";
-import { Headphones, Leaf, Truck } from "lucide-react";
 import Image from "next/image";
-
-const icons = {
-  leaf: Leaf,
-  truck: Truck,
-  headset: Headphones,
-};
+import icon1 from "../../../public/images/home-2/imgi_149_default.jpeg";
+import icon2 from "../../../public/images/home-2/imgi_150_default.jpeg";
+import icon3 from "../../../public/images/home-2/imgi_151_default.jpeg";
 
 export function WhyChooseSection() {
-  const [tall, ...gridImages] = whyChooseImages;
+  // Use the last 4 images for the 2x2 grid
+  const gridImages = whyChooseImages.slice(1, 5);
+  const leftIcons = [icon1, icon2, icon3];
 
   return (
-    <Section>
-      <SectionHeader
-        eyebrow="why choose bocpak?"
-        title="Switch to eco-friendly packaging with an expert's help"
-      />
+    <Section className="py-20 lg:py-[120px]">
+      <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
+        {/* Left Side: Text and Features */}
+        <div className="lg:col-span-5">
+          <Reveal>
+            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.15em] text-[#2B63FF]">
+              WHY CHOOSE BOCPAK?
+            </p>
+            <h2 className="font-heading text-[32px] leading-[1.2] text-dark md:text-[42px]">
+              Switch to eco-friendly packaging<br />with an expert&rsquo;s help
+            </h2>
+          </Reveal>
 
-      <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
-        <div className="space-y-10">
-          {whyChooseFeatures.map((feature, i) => {
-            const Icon = icons[feature.icon as keyof typeof icons];
-            return (
-              <Reveal key={feature.title} delay={i * 0.08}>
-                <article className="flex gap-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-accent-green/15 text-accent-green">
-                    <Icon className="h-6 w-6" strokeWidth={1.75} />
+          <div className="mt-12 space-y-10">
+            {whyChooseFeatures.map((feature, i) => (
+              <Reveal key={feature.title} delay={i * 0.1}>
+                <article className="flex items-start gap-6">
+                  <div className="mt-1 flex shrink-0">
+                    <Image
+                      src={leftIcons[i]}
+                      alt={feature.title}
+                      width={54}
+                      height={54}
+                      className="h-16 w-16 object-contain"
+                    />
                   </div>
                   <div>
                     <h3 className="font-heading text-[22px] leading-[28px] text-dark">
@@ -41,43 +48,67 @@ export function WhyChooseSection() {
                   </div>
                 </article>
               </Reveal>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
-        <div className="relative">
-          <span
-            className="pointer-events-none absolute -left-2 top-0 z-10 font-heading text-[120px] leading-none text-dark/10 lg:-left-8 lg:text-[160px]"
-            aria-hidden
-          >
-            &ldquo;
-          </span>
-          <div className="grid grid-cols-2 gap-4 lg:min-h-[480px]">
-            <Reveal className="row-span-2">
-              <div className="relative h-full min-h-[280px] overflow-hidden rounded-2xl lg:min-h-0 lg:h-full">
-                <Image
-                  src={tall.src}
-                  alt={tall.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                  sizes="(max-width: 1024px) 50vw, 320px"
-                  priority
-                />
-              </div>
-            </Reveal>
-            {gridImages.map((image, i) => (
-              <Reveal key={image.src} delay={0.05 + i * 0.04}>
-                <div className="relative aspect-square overflow-hidden rounded-2xl">
+        {/* Right Side: Image Grid */}
+        <div className="relative py-12 lg:col-span-7 lg:py-16 lg:pl-10">
+          {/* Green Background Blob */}
+          <div className="absolute left-1/2 top-1/2 -z-10 aspect-square w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-[40px] bg-[#E8F8F2] rotate-[36deg]" />
+          
+          <div className="grid grid-cols-2 gap-4 lg:gap-6">
+            {/* Column 1 (Pushed Down) */}
+            <div className="flex flex-col gap-3 pt-12 lg:gap-6 lg:pt-16">
+              <Reveal delay={0.2}>
+                <div className="relative aspect-square w-full overflow-hidden rounded-[24px] shadow-sm">
                   <Image
-                    src={image.src}
-                    alt={image.alt}
+                    src={gridImages[0].src}
+                    alt={gridImages[0].alt}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 1024px) 45vw, 200px"
+                    sizes="(max-width: 1024px) 50vw, 300px"
                   />
                 </div>
               </Reveal>
-            ))}
+              <Reveal delay={0.4}>
+                <div className="relative aspect-square w-full overflow-hidden rounded-[24px] shadow-sm">
+                  <Image
+                    src={gridImages[2].src}
+                    alt={gridImages[2].alt}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 50vw, 300px"
+                  />
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Column 2 (Pushed Up) */}
+            <div className="flex flex-col gap-4 pb-12 lg:gap-6 lg:pb-16">
+              <Reveal delay={0.3}>
+                <div className="relative aspect-square w-full overflow-hidden rounded-[24px] shadow-sm">
+                  <Image
+                    src={gridImages[1].src}
+                    alt={gridImages[1].alt}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 50vw, 300px"
+                  />
+                </div>
+              </Reveal>
+              <Reveal delay={0.5}>
+                <div className="relative aspect-square w-full overflow-hidden rounded-[24px] shadow-sm">
+                  <Image
+                    src={gridImages[3].src}
+                    alt={gridImages[3].alt}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 50vw, 300px"
+                  />
+                </div>
+              </Reveal>
+            </div>
           </div>
         </div>
       </div>
