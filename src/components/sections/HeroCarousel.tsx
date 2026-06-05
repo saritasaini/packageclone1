@@ -73,7 +73,7 @@ export function HeroCarousel() {
             <div
               key={slide.id}
               className={cn(
-                "relative min-w-0 flex-[0_0_100%] transition-colors duration-500",
+                "relative min-w-0 flex-[0_0_100%] transition-colors duration-500 select-none",
                 slide.bg,
               )}
             >

@@ -144,48 +144,55 @@ export const whyChooseImages = [
   { src: img("h2-image-5.jpg"), alt: "Retail packaging display" },
 ];
 
+import img1 from "../../../public/images/home-2/imgi_40_h2-services-image1.jpeg";
+import img2 from "../../../public/images/home-2/imgi_41_h2-services-image2.jpeg";
+import img3 from "../../../public/images/home-2/imgi_42_h2-services-image3.jpeg";
+import img4 from "../../../public/images/home-2/imgi_43_h2-services-image4.jpeg";
+import img5 from "../../../public/images/home-2/imgi_44_h2-services-image5.jpeg";
+import img6 from "../../../public/images/home-2/imgi_39_h2-services-image6.jpeg";
+
 export const services = [
   {
     title: "Structural Engineering",
     description:
       "Our packaging experts design and engineer innovative structures tailored to your product and branding.",
     color: "bg-[#F865DC]",
-    image: img("h2-bg-1.png"),
+    image: img1,
   },
   {
     title: "Digital Printing",
     description:
       "Custom printed packages help attract the attention of customers, and tell them everything they need to...",
     color: "bg-primary",
-    image: img("h2-bg-2.png"),
+    image: img2,
   },
   {
     title: "Custom Printed Bags",
     description:
       "Packaging is an incredibly important identity asset, which can have enormous brand building capabilities.",
     color: "bg-[#F5C842]",
-    image: img("h2-bg-3.png"),
+    image: img3,
   },
   {
     title: "Custom Mailer Box",
     description:
       "Our custom coffee mailer boxes are the perfect solution to engage customers and protect your roasted coffee during shipping.",
-    color: "bg-[#2EC4B6]",
-    image: img("h2-bg-1.png"),
+    color: "bg-[#8D82C4]",
+    image: img4,
   },
   {
     title: "Custom Roll Stock",
     description:
       "Our fully customisable roll stock features high-quality images and a design that keeps even the smallest details crisp and...",
-    color: "bg-[#F865DC]",
-    image: img("h2-bg-2.png"),
+    color: "bg-[#05A66B]",
+    image: img5,
   },
   {
     title: "Samples & Prototyping",
     description:
       "Create physical samples and 3D interactive prototypes final product packaging before making a final decision.",
-    color: "bg-primary",
-    image: img("h2-bg-3.png"),
+    color: "bg-[#F278B8]",
+    image: img6,
   },
 ];
 
