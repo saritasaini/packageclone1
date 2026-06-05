@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import { UnderlineHighlight } from "@/components/ui/UnderlineHighlight";
-import { heroSlides, trustBullets } from "@/lib/content/home-2";
+import { heroSlides, trustBullets, img } from "@/lib/content/home-2";
 import { cn } from "@/lib/utils/cn";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
@@ -84,7 +84,8 @@ export function HeroCarousel() {
                   fill
                   className={cn(
                     "object-contain object-center lg:object-right lg:origin-right mix-blend-darken",
-                    index === 2 ? "scale-[0.55]" : "scale-[0.85]"
+                    index === 0 ? "-translate-x-2 lg:-translate-x-8" : "-translate-x-4 lg:-translate-x-22",
+                    index === 2 ? "scale-[0.75]" : "scale-[1.00]"
                   )}
                   priority={index === 0}
                   sizes="100vw"
@@ -92,7 +93,7 @@ export function HeroCarousel() {
               </div>
 
               <div className="relative z-10 container-bocpak grid min-h-[630px] items-center gap-8 py-10 lg:min-h-[800px] lg:grid-cols-2 lg:gap-12 lg:py-16 -translate-y-6 lg:-translate-y-12">
-                <div className="flex flex-col justify-center lg:-ml-4">
+                <div className="flex flex-col justify-center -ml-4 lg:-ml-12 translate-y-8 lg:translate-y-16">
                   <motion.h1
                     initial="hidden"
                     animate={selected === index ? "visible" : "hidden"}
@@ -145,11 +146,24 @@ export function HeroCarousel() {
                   </motion.div>
                 </div>
 
-                <div className="relative flex items-start justify-end h-full pt-10">
+                <div className="relative flex items-start justify-end h-full pt-24 pr-0 lg:pt-40 lg:-mr-36">
                   {slide.badge && (
-                    <span className="z-10 rounded-full bg-accent-green px-4 py-2 text-[12px] font-bold uppercase text-white shadow-md">
-                      {slide.badge}
-                    </span>
+                    <div className="relative z-10 flex h-32 w-32 items-center justify-center">
+                      <Image
+                        src={img("h2-bg-3.png")}
+                        alt="Badge Background"
+                        fill
+                        className="animate-[spin_10s_linear_infinite] object-contain drop-shadow-md"
+                      />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+                        <span className="text-[14px] font-bold uppercase tracking-widest mt-1">
+                          {slide.badge.split(' ')[0]}
+                        </span>
+                        <span className="text-[32px] font-black leading-none">
+                          {slide.badge.split(' ')[1]}
+                        </span>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>

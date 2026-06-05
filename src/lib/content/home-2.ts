@@ -67,17 +67,17 @@ export const brandLogos = [
 
 export const ecoStats = [
   {
-    value: "7%",
+    value: "60%",
     label: "Reduction in your overall carbon footprint by lowering emissions.",
     icon: img("h2-svg-1.svg"),
   },
   {
-    value: "3%",
+    value: "25%",
     label: "Lower shipping cost from material reduction and other optimizations.",
     icon: img("h2-svg-2.svg"),
   },
   {
-    value: "5%",
+    value: "40%",
     label: "Increase in sales due to growing consumer demands.",
     icon: img("h2-svg-3.svg"),
   },

@@ -1,10 +1,10 @@
 "use client";
 
-import { RevealItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { categories, img } from "@/lib/content/home-2";
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,26 +19,25 @@ function CategoryCard({
 }) {
   const itemLabel = count === 1 ? "item" : "items";
   return (
-    <article className="group min-w-0 flex-[0_0_78%] sm:flex-[0_0_calc((100%-30px)/2)]">
-      <Link href="#" className="block">
-        <div className="category-card-img relative mb-[21px] flex aspect-square items-center justify-center overflow-hidden bg-white">
+    <article className="group min-w-0 flex-[0_0_280px] select-none sm:flex-[0_0_400px]">
+      <Link href="#" className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-shadow hover:shadow-[0_4px_25px_rgb(0,0,0,0.08)]">
+        <div className="text-left">
+          <span className="mb-3 inline-block rounded bg-[#E8F8F2] px-2 py-0.5 text-[12px] font-medium text-[#2EC4B6]">
+            {count} {itemLabel}
+          </span>
+          <h3 className="font-heading text-[22px] leading-[28px] text-dark">
+            {title}
+          </h3>
+        </div>
+        <div className="relative mt-4 flex h-36 items-center justify-center">
           <Image
             src={image}
             alt={title}
             width={400}
             height={400}
-            className="h-auto max-h-[calc(100%-2rem)] w-auto max-w-[calc(100%-2rem)] object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
+            className="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.05]"
             sizes="280px"
           />
-        </div>
-        <div className="category-product-caption text-left">
-          <h3 className="font-heading text-[18px] leading-[26px] text-dark transition-colors group-hover:text-primary">
-            {title}
-          </h3>
-          <p className="mt-1 text-[14px] text-text">
-            <span className="font-semibold text-dark">{count}</span>{" "}
-            <span>{itemLabel}</span>
-          </p>
         </div>
       </Link>
     </article>
@@ -53,72 +52,40 @@ export function CategorySection() {
   });
 
   return (
-    <Section className="bg-section-muted">
-      <SectionHeader
-        title="4900+ Eco-friendly packaging"
-        description="Personalized and specialized custom packaging wholesale service."
-        ctaLabel="see all shop"
-      />
-
-      <div className="mt-10 grid gap-5 lg:grid-cols-12 lg:gap-5">
-        <div className="lg:col-span-8">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-[30px]">
-              {categories.map((cat) => (
-                <CategoryCard key={cat.title} {...cat} />
-              ))}
-            </div>
+    <Section className="bg-[#F6F6F6] !py-[120px]">
+      <Reveal>
+        <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="font-heading text-[32px] leading-[1.15] text-dark md:text-[42px] lg:text-[48px]">
+              <span className="text-[#009900]">4900+</span> Eco-friendly packaging
+            </h2>
+            <p className="mt-3 text-[16px] leading-[26px] text-text">
+              Personalized and specialized <span className="font-bold">custom packaging</span> wholesale service.
+            </p>
           </div>
+          <Link
+            href="#"
+            className="shrink-0 rounded bg-[#2B63FF] px-8 py-2.5 text-[15px] font-bold uppercase tracking-wider text-white transition-colors hover:bg-black"
+          >
+            SEE ALL SHOP &gt;
+          </Link>
         </div>
+      </Reveal>
 
-        <div className="flex flex-col gap-5 lg:col-span-4">
-          <RevealItem>
-            <Link
-              href="#"
-              className="relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-2xl bg-[#2EC4B6] px-[30px] pb-[30px] pt-8 text-white"
-            >
-              <h3
-                className="font-heading max-w-[220px] text-[34px] leading-[40px] text-white"
-              >
-                15% Discount
-              </h3>
-              <p className="mt-2.5 text-[16px] leading-[26px] text-white/90">
-                On all mailer boxes orders of 500 pieces or more.
-              </p>
-              <span className="mt-[27px] inline-flex items-center gap-1 text-[14px] font-semibold uppercase tracking-wide after:block after:h-px after:w-8 after:bg-white after:content-['']">
-                shop now
-              </span>
-              <Image
-                src={img("h2-image-banner-1.jpg")}
-                alt=""
-                width={200}
-                height={200}
-                className="pointer-events-none absolute right-0 top-4 h-auto w-[42%] object-contain"
-              />
-            </Link>
-          </RevealItem>
-          <RevealItem>
-            <Link
-              href="#"
-              className="relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-2xl bg-[#8B7355] px-[30px] pb-[30px] pt-8 text-white"
-            >
-              <h3 className="font-heading max-w-[220px] text-[34px] leading-[40px]">
-                Custom packaging, simplified
-              </h3>
-              <span className="mt-[27px] inline-flex items-center gap-1 text-[14px] font-semibold uppercase tracking-wide after:block after:h-px after:w-8 after:bg-white after:content-['']">
-                shop now
-              </span>
-              <Image
-                src={img("h2-image-banner-2.jpg")}
-                alt=""
-                width={200}
-                height={200}
-                className="pointer-events-none absolute right-0 top-4 h-auto w-[48%] object-contain"
-              />
-            </Link>
-          </RevealItem>
+      <motion.div
+        className="-mr-[calc(50vw-50%)] overflow-hidden"
+        ref={emblaRef}
+        initial={{ opacity: 0, x: 300 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+      >
+        <div className="flex gap-[30px]">
+          {categories.map((cat) => (
+            <CategoryCard key={cat.title} {...cat} />
+          ))}
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }

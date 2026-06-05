@@ -10,17 +10,21 @@ export function StarRating({
 }) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Star
-            key={i}
-            className="h-4 w-4 fill-secondary text-secondary"
-            strokeWidth={0}
-          />
-        ))}
+      <div className="flex items-center gap-2 rounded-full bg-[#FF4DF8] px-4 py-1.5">
+        <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star
+              key={i}
+              className="h-4 w-4 fill-white text-white"
+              strokeWidth={0}
+            />
+          ))}
+        </div>
+        <span className="flex h-5 items-center justify-center rounded-full bg-black px-2.5 text-[12px] font-bold text-white">
+          {rating}
+        </span>
       </div>
-      <span className="text-[15px] font-semibold text-dark">{rating}</span>
-      <span className="text-[14px] text-text">Google Reviews</span>
+      <span className="text-[14px] text-text whitespace-nowrap">Google Reviews</span>
     </div>
   );
 }
